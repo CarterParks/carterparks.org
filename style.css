@@ -55,11 +55,20 @@ border-width: 1px;
     top: calc(50% - 100px);
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .labeled-button{
+    opacity: 0;
     position: relative;
     float: left;
     text-align: center;
     margin: 50px;
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;  
 }
 
 .button + p{
