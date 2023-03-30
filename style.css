@@ -72,15 +72,6 @@ border-width: 1px;
     animation-fill-mode: forwards;  
 }
 
-.button + p{
-    opacity: 0;
-    transition: 0.2s;
-}
-
-.button:hover + p{
-    opacity: 1;
-}
-
 .button{
     font-size: 30px;
     position: relative;
@@ -144,10 +135,10 @@ box-shadow: inset 13px 13px 25px #949596,
                 inset 25px -25px 50px #ffffff;
 }
 
-#frame-in img{
-    border-radius: 40px;
-    width: 80%;
-    height: 80%;
+#frame-out img{
+    border-radius: 60px;
+    width: 90%;
+    height: 90%;
 }
 
 #about-container{
@@ -159,10 +150,10 @@ box-shadow: inset 13px 13px 25px #949596,
 #talk-block-out{
     border-radius: 65px;
     width: 500px;
-    height: 350px;
     background: #E8E9EB;
     box-shadow:  -34px 34px 69px #c5c6c8, 
              34px -34px 69px #ffffff;
+    padding: 50px;
 }
 
 #talk-block-in{
