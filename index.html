@@ -1,42 +1,60 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel='stylesheet' href='style.css'/>
-        <link rel="shortcut icon" type="image/png" href="https://s3-us-west-1.amazonaws.com/carter-parks.net/icon/favicon.png"/>
-        <title>Carter Parks</title>
-    </head>
-    <body>
-        <div id="button-holder">
-            <div class="labeled-button" style="animation-delay: 0.25s;">
-                <a class="button centered bordered" href="Carter-Parks-Resume.pdf" target="_blank">
-                    <img alt="Resume" class="content" src="icon/resume.png">
-                </a>
-                <p>Resume</p>
-           </div>
-     
-            <div class="labeled-button" style="animation-delay: 0.50s;">
-                <a class="button centered bordered" href="https://github.com/CarterParks" target="_blank">
-                    <img alt="Github" class="content" src="icon/github.png">
-                </a>
-                <p>Github</p>
-            </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <div class="labeled-button" style="animation-delay: 0.75s;">
-                <a class="button centered bordered" href="about.html">
-                    <img alt="About Me" class="content" src="icon/person.png">
-                </a>
-                <p>About Me</p>
-            </div>
-        </div>
+  <main>
+    <section>
+      <h1>Welcome to My Website</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl ac tincidunt tincidunt, nunc nunc lacinia nunc, id lacinia nunc nunc id nunc. Sed auctor, nunc ac tincidunt tincidunt, nunc nunc lacinia nunc, id lacinia nunc nunc id nunc.</p>
+    </section>
 
-        <div id="block" class="centered bordered" style="--radius:33px; animation-delay: 1s;">
-            <h1>
-            Hi, I'm<br>
-            Carter<br>
-            Parks!
-            <h1>
-        </div>
-        <body>
+    <section>
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl ac tincidunt tincidunt, nunc nunc lacinia nunc, id lacinia nunc nunc id nunc. Sed auctor, nunc ac tincidunt tincidunt, nunc nunc lacinia nunc, id lacinia nunc nunc id nunc.</p>
+    </section>
+
+    <section>
+      <h2>Latest Blog Posts</h2>
+      <ul>
+        <li><a href="#">Blog Post 1</a></li>
+        <li><a href="#">Blog Post 2</a></li>
+        <li><a href="#">Blog Post 3</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2021 My Website. All rights reserved.</p>
+  </footer>
+</body>
 </html>
 
