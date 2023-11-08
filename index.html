@@ -5,44 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carter Parks</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
   <div id="container">
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
-    <div class="card"> Hi! I'm Carter Parks. </div>
+    <div class="card"><div class="header">Test Content</div></div>
   </div>
+  <script src="./scripts.js"> </script>
   <script>
-    document.querySelectorAll(".card").forEach((x, i) => {
-      x.style.height = `${Math.random() * 150 + 50}px`;
-      x.innerText = i;
-      x.addEventListener('mouseover', function() {
-        this.style.borderColor = `hsl(${Math.random() * 360}, 50%, 50%)`;
-        this.style.color = `hsl(${Math.random() * 360}, 50%, 80%)`;
-      });
-      x.addEventListener('mouseout', function() {
-        this.style.borderColor = 'initial';
-        this.style.color = 'initial';
-      });
-    });
+    let card = document.querySelector('.card');
+    let container = document.querySelector('#container');
+    for (let i = 0; i < 20; i += 1)
+      container.appendChild(card.cloneNode(true));
   </script>
 </body>
 </html>

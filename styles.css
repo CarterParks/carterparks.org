@@ -2,9 +2,10 @@ body {
     margin: 0;
     padding: 10%;
     padding-top: 5%;
-    background-color: #222222;
+    background-color: hsl(0,0%,15%);
     font-family: Hermit-Regular, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
+    --highlight: oklch(100% 0% 0);
 }
 
 @font-face {
@@ -20,8 +21,16 @@ body {
 
 .card {
   break-inside: avoid;
-  border: 2px solid #ccc;
-  color: #aaa;
-  padding: 10px;
-  margin-bottom: 20px;
+  color: hsl(0,0%,20%);
+  background-color: hsl(0,0%,20%);
+  border: 1px solid var(--highlight);
+  padding: 0;
+  margin-bottom: 1.25rem;
+  min-height: 9.375rem;
+}
+
+.header {
+    display: block;
+    background-color: var(--highlight);
+    padding: .625rem;
 }
