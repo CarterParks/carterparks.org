@@ -1,0 +1,62 @@
+Content is separated by \n\*. The first split item (this line) is removed.
+* About Me
+* Hello, my name is Carter Parks. This site
+is my space for fiddling around with web design and other topics. <br><br> This page
+contains information about me and projects I am working on, as well as work that
+I find interesting and would like others to know about.
+
+* Career
+* I work as a software developer. Most of my experience has been in web development,
+but I have a strong interest in all areas of computing.
+Take a look at <a target="_blank" href="Carter-Parks-Resume.pdf">my resume</a> and
+see if I would be a good fit for the work you are doing.
+
+* Internet
+Prescence
+* You can email me at contact@carterparks.org <br><br> You can find
+my software projects on my <a target="_blank" href="https://github.com/CarterParks">GitHub
+Account</a>. <br><br> I am also on <a target="_blank" href="https://www.linkedin.com/in/carter-parks-596604242">LinkedIn</a>.
+
+* Site Info
+* The source for this site is located <a
+target="_blank" href="https://github.com/CarterParks/carterparks.org">here</a>. The
+page is served by AWS S3 static hosting, although I hope to self-host it once I obtain
+the necessary machinery. 
+
+* OKLCH
+* The <a target="_blank" href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl">
+OKLCH colorspace</a> allows for hue shifting without changes in luminance or chroma.
+The (admittedly basic) colors on the site all use OKLCH.
+
+* Fonts
+* This site uses
+Pablo Caro's <a target="_blank" href="https://pcaro.es/hermit/">Hermit Font</a>,
+one of my favorite fonts, although I now use the popular <a target="_blank"
+href="https://github.com/tonsky/FiraCode">Fira Code</a> in my terminals, because
+I like the ligatures.
+
+* Distrohopping
+* I am a Linux enthusiast, and enjoy customization
+and control of my computer environment. Currently I'm running the <a target="_blank"
+href="https://www.gentoo.org/">Gentoo</a> distribution and using <a target="_blank"
+href="https://i3wm.org/">i3</a>, a tiling, keyboard-driven window manager.
+
+* CLI FTW
+* I have a stong preference for the command-line interface, and perform
+the large marjority of my work there. I typically use <a target="_blank" href="https://kakoune.org/">Kakoune</a>,
+a modal editor with a number of very useful features, such as multiple selections
+and excellent shell integration. I also use <a target="_blank" href="https://ohmyz.sh/">
+Oh My Zsh</a>, a zsh configuration framework with great completions, plugins, and themeing.
+
+* Standard Ebooks
+* <a target="_blank" href="https://standardebooks.org/">The
+Standard Ebooks Project</a> makes high-quality public domain ebooks. I read them on my Kobo
+Clara HD, which allows sideloading of PDFs, EPUBs, etc.
+
+* Self Hosted Email
+* Conventional wisdom says hosting your own
+email is not worth the pain.
+<a target="_blank" href="https://maddy.email/">Maddy Email</a>
+has solved this problem for me. It was a
+breeze to set up and I recommend it. My email server is running on
+an AWS EC2 instance, but I'll migrate it to hardware I own once I get some.

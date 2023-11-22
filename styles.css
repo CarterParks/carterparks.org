@@ -1,11 +1,15 @@
+:root {
+    --white-trans: oklch(100% 0 0 / 0.9);
+}
+
 body {
     margin: 0;
     padding: 10%;
     padding-top: 5%;
-    background-color: hsl(0,0%,15%);
+    background-image: url(terrain.png);
+    background-repeat: repeat;
     font-family: Hermit-Regular, sans-serif;
     font-size: 1rem;
-    --highlight: oklch(100% 0% 0);
 }
 
 @font-face {
@@ -13,24 +17,44 @@ body {
     src: url("Hermit-Regular.otf") format("opentype");
 }
 
+
 #container {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
+  column-width: 16rem;
 }
 
 .card {
   break-inside: avoid;
-  color: hsl(0,0%,20%);
-  background-color: hsl(0,0%,20%);
-  border: 1px solid var(--highlight);
   padding: 0;
   margin-bottom: 1.25rem;
-  min-height: 9.375rem;
+  border: 1px solid var(--white-trans);
+  --hue: 200;
+  --accent-color: oklch(75% 0.11 var(--hue) / 0.9);
+  backdrop-filter: blur(0.2rem);
 }
 
-.header {
-    display: block;
-    background-color: var(--highlight);
-    padding: .625rem;
+.card div {
+  padding: .625rem;
+}
+
+.card-body ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.card a:link,
+.card a:visited {
+  color: var(--accent-color);
+}
+
+.card-body {
+  color: var(--white-trans);
+}
+
+.card-header {
+  display: block;
+  color: oklch(0% 0 0 / 0.9);
+  background-color: var(--white-trans);
+  border: 0;
+  border-bottom: 4px solid var(--accent-color);
 }
