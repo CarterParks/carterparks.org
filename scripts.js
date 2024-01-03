@@ -1,6 +1,6 @@
 fetch("content.txt")
-  .then((res) => res.text())
-  .then((text) => {
+  .then(res => res.text())
+  .then(text => {
     let content =  text.split(/\n\*/).slice(1);
     while (content.length > 0) {
       let cardHead = document.createElement('div');
@@ -22,4 +22,4 @@ fetch("content.txt")
     let cards = document.querySelectorAll('.card');
     cards.forEach((x, i) => x.style.setProperty('--hue', `${(i / cards.length) * 360 }`));
   })
-  .catch((e) => console.error(e));
+  .catch(console.error);
