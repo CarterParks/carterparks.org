@@ -18,8 +18,8 @@ on my <a target="_blank" href="https://github.com/CarterParks">GitHub Account</a
 
 * Site Info
 * The source for this site is located <a target="_blank" href="https://github.com/CarterParks/carterparks.org">here</a>.
-The page is served by AWS S3 static hosting, although I hope to self-host it once
-I obtain the necessary machinery. 
+The page is served by AWS S3 static hosting, although I hope to fully self-host it once
+I obtain the necessary equipment. 
 
 * OKLCH
 * The <a target="_blank" href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl">
@@ -40,8 +40,7 @@ window manager.
 
 * CLI FTW
 * I have a stong preference for the command-line interface, and perform the large
-marjority of my work there. I use zsh + <a target="_blank" href="https://ohmyz.sh/">Oh
-My Zsh</a>, a configuration framework with great completions, plugins, and themeing.
+marjority of my work there. I use zsh and <a target="_blank" href="https://ohmyz.sh/">omz</a>, a configuration framework with great completions, plugins, and themeing.
 My terminal of choice is <a target="_blank" href="https://st.suckless.org/">st</a>
 a simple terminal by the suckless.org project.
 
@@ -51,10 +50,10 @@ editor with a number of very useful features, such as multiple selections and ex
 shell integration.
 
 * Self Hosted Email
-* Conventional wisdom says hosting your own email is not worth the pain. <a target="_blank"
-href="https://maddy.email/">Maddy Email</a> has solved this problem for me. It was
-a breeze to set up and I recommend it. My email server is running on an AWS EC2 instance,
-but I'll migrate it to hardware I own once I get some.
+* I use an installation of
+<a target="_blank" href="https://maddy.email/">Maddy Email</a>
+on an AWS EC2 instance to recieve email.
+It was a breeze to set up and I recommend it.
 
 * Standard Ebooks
 * <a target="_blank" href="https://standardebooks.org/">The Standard Ebooks Project</a>

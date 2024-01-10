@@ -3,23 +3,27 @@
 }
 
 body {
-    margin: 0;
-    padding: 10%;
-    padding-top: 5%;
-    background-image: url(terrain.png);
-    background-repeat: repeat;
-    font-family: Hermit-Regular, sans-serif;
-    font-size: 1rem;
+  margin: 0;
+  padding: 5%;
+  background-image: url(terrain.png);
+  background-repeat: repeat;
+  font-family: Hermit-Regular, sans-serif;
+  font-size: 1rem;
 }
 
 @font-face {
-    font-family: Hermit-Regular;
-    src: url("Hermit-Regular.otf") format("opentype");
+  font-family: Hermit-Regular;
+  src: url("Hermit-Regular.otf") format("opentype");
 }
-
 
 #container {
   column-width: 16rem;
+}
+
+#key {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1.25rem;
 }
 
 .card {

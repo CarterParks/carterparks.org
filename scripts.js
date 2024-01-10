@@ -1,25 +1,42 @@
-fetch("content.txt")
-  .then(res => res.text())
-  .then(text => {
-    let content =  text.split(/\n\*/).slice(1);
-    while (content.length > 0) {
-      let cardHead = document.createElement('div');
-      cardHead.classList.add("card-header");
-      cardHead.innerHTML = content.shift();
+function makeCard(header, body){
+    let cardHead = document.createElement("div");
+    cardHead.classList.add("card-header");
+    cardHead.innerHTML = header;
 
-      let cardBody = document.createElement('div');
-      cardBody.classList.add("card-body");
-      cardBody.innerHTML = content.shift();
+    let cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+    cardBody.innerHTML = body;
 
-      let card = document.createElement('div');
-      card.classList.add("card");
-      card.prepend(cardBody);
-      card.prepend(cardHead);
+    let card = document.createElement("div");
+    card.classList.add("card");
+    card.prepend(cardBody);
+    card.prepend(cardHead);
 
-      document.querySelector('#container').appendChild(card);
-    }
+    return card;
+}
 
-    let cards = document.querySelectorAll('.card');
-    cards.forEach((x, i) => x.style.setProperty('--hue', `${(i / cards.length) * 360 }`));
-  })
-  .catch(console.error);
+async function populate() {
+  const content_file = await (await fetch("content.txt")).text();
+  const key_file = await (await fetch("key.svg")).text();
+
+  let ca = content_file.split(/\n\*/).slice(1);
+  const cardHeaders = ca.filter((x, i) => i % 2 == 0)
+  const cardBodies = ca.filter((x, i) => i % 2 == 1)
+
+  let container = document.querySelector("#container");
+  cardHeaders.forEach((header, idx) => container.appendChild(makeCard(header, cardBodies[idx])))
+
+  let cards = document.querySelectorAll(".card");
+  cards.forEach((x, i) => x.style.setProperty("--hue", `${(i / cards.length) * 360 }`));
+
+  let key = document.createElement("div");
+  key.id = "key";
+  key.innerHTML = key_file;
+  // container.appendChild(key);
+}
+
+function auth() {
+
+}
+
+populate();
