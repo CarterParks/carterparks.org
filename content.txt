@@ -16,6 +16,11 @@ the work you are doing.
 on my <a target="_blank" href="https://github.com/CarterParks">GitHub Account</a>.
 <br><br> I am also on <a target="_blank" href="https://www.linkedin.com/in/carter-parks-596604242">LinkedIn</a>.
 
+* UID
+* Unfortunately, I am not the first 'Carter Parks' in the software development world. The links above are the only places
+I can be found on the internet. Websites such as 'carterparks (dot) com' and accounts such as '(at) carterparks' are a
+different individual entirely.
+
 * Site Info
 * The source for this site is located <a target="_blank" href="https://github.com/CarterParks/carterparks.org">here</a>.
 The page is served by AWS S3 static hosting, although I hope to fully self-host it once
