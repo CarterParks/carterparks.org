@@ -3,10 +3,8 @@ Content is separated by \n\*. The first split item (this line) is removed.
 * Hello, my name is Carter Parks. This site is my space for fiddling around with
 web design and other topics. <br><br> This page contains information about me and
 projects I am working on, as well as work that I find interesting and would like
-others to know about.
-
-* Picture
-* <div class="wrap-collabsible">
+others to know about.<br><br>
+<div class="wrap-collabsible">
   <input id="collapsible" class="toggle" type="checkbox">
   <label for="collapsible" class="lbl-toggle">Show/Hide</label>
   <div class="collapsible-content">
