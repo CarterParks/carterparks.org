@@ -36,10 +36,6 @@ body {
   backdrop-filter: blur(0.2rem);
 }
 
-.card div {
-  padding: .625rem;
-}
-
 .card-body ul {
   list-style-type: disc;
   margin: 0;
@@ -53,6 +49,7 @@ body {
 
 .card-body {
   color: var(--white-trans);
+  padding: .625rem;
 }
 
 .card-header {
@@ -61,4 +58,40 @@ body {
   background-color: var(--white-trans);
   border: 0;
   border-bottom: 4px solid var(--accent-color);
+  padding: .625rem;
+}
+
+/* https://www.digitalocean.com/community/tutorials/css-collapsible */
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  cursor: pointer;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--white-trans);
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100vh;
 }

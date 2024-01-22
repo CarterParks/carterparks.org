@@ -5,21 +5,28 @@ web design and other topics. <br><br> This page contains information about me an
 projects I am working on, as well as work that I find interesting and would like
 others to know about.
 
+* Picture
+* <div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox">
+  <label for="collapsible" class="lbl-toggle">Show/Hide</label>
+  <div class="collapsible-content">
+    <img src="profile.png" width="100%">
+  </div>
+</div>
+
 * Career
 * I work as a software developer. Most of my experience has been in web development,
 but I have a strong interest in all areas of computing. Take a look at <a target="_blank"
 href="Carter-Parks-Resume.pdf">my resume</a> and see if I would be a good fit for
 the work you are doing.
 
-* Internet Prescence
-* You can email me at contact@carterparks.org <br><br> You can find my software projects
-on my <a target="_blank" href="https://github.com/CarterParks">GitHub Account</a>.
-<br><br> I am also on <a target="_blank" href="https://www.linkedin.com/in/carter-parks-596604242">LinkedIn</a>.
-
-* UID
-* Unfortunately, I am not the first 'Carter Parks' in the software development world. The links above are the only places
-I can be found on the internet. Websites such as 'carterparks (dot) com' and accounts such as '(at) carterparks' are a
-different individual entirely.
+* Internet Presence
+* You can email me at <a href="contact@carterparks.org">contact@carterparks.org</a>.
+I have a
+<a target="_blank" href="https://github.com/CarterParks">GitHub</a>
+and a
+<a target="_blank" href="https://www.linkedin.com/in/carter-parks-596604242">LinkedIn</a>.
+This list is comprehensive. If you see someone else on the web that shares my name, it isn't me!
 
 * Site Info
 * The source for this site is located <a target="_blank" href="https://github.com/CarterParks/carterparks.org">here</a>.
