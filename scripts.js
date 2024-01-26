@@ -29,14 +29,13 @@ async function populate() {
   let cards = document.querySelectorAll(".card");
   cards.forEach((x, i) => x.style.setProperty("--hue", `${(i / cards.length) * 360 }`));
 
-  let key = document.createElement("div");
+  /*
+  let key = document.createElement("a");
   key.id = "key";
+  key.href="/retriever/index.html"
   key.innerHTML = key_file;
-  // container.appendChild(key);
-}
-
-function auth() {
-
+  container.appendChild(key);
+  */
 }
 
 populate();
