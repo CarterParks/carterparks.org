@@ -100,11 +100,12 @@
 
           .toggle:checked + .lbl-toggle + .collapsible-content {
             max-height: 100vh;
+            padding-top: 5px;
           }
         </style>
     </head>
     <body>
-        <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" preserveAspectRatio="xMidYMid meet" id="svg-bg">
+        <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" preserveAspectRatio="xMaxYMax" id="svg-bg">
             <defs>
               <filter id="terrain">
                 <feTurbulence type="fractalNoise" numOctaves="1" baseFrequency="0.02" stitchTiles="stitch"></feTurbulence>
@@ -142,7 +143,7 @@
                         <input id="collapsible" class="toggle" type="checkbox">
                         <label for="collapsible" class="lbl-toggle">Show/Hide</label>
                         <div class="collapsible-content">
-                            <img src="profile.png" width="100%">
+                            <img src="profile.webp" width="100%">
                         </div>
                     </div>
                 </div>
