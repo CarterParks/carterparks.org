@@ -1,5 +1,5 @@
 #!/bin/zsh
-/usr/bin/aws s3 sync\
+aws s3 sync\
   --acl 'public-read'\
   --exclude '.git/*'\
   --exclude 'retriever/*'\

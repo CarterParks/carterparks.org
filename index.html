@@ -1,15 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carter Parks</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-</head>
-<body>
-  <div id="container"> </div>
-  <script async src="./scripts.js"> </script>
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carter Parks</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <style>
+          :root {
+              --white-trans: oklch(100% 0 0 / 0.9);
+              --black-trans: oklch(000% 0 0 / 0.9);
+          }
 
+          body {
+            margin: 0;
+            font-family: Hermit-Regular, monospace;
+            font-size: 1rem;
+          }
+
+          @font-face {
+            font-family: Hermit-Regular;
+            src: url("Hermit-Regular.woff2") format("opentype");
+          }
+
+          #svg-bg {
+            position: fixed;
+            z-index: -1;
+          }
+
+          #container {
+            padding: 5%;
+            column-width: 16rem;
+          }
+
+          .card {
+            break-inside: avoid;
+            padding: 0;
+            margin-bottom: 1.25rem;
+            border: 1px solid var(--white-trans);
+            --hue: 200;
+            --accent-color: oklch(75% 0.11 var(--hue) / 0.9);
+            background-color: var(--black-trans);
+          }
+
+          .card-body ul {
+            list-style-type: disc;
+            margin: 0;
+            padding-left: 1.25rem;
+          }
+
+          .card a:link,
+          .card a:visited {
+            color: var(--accent-color);
+          }
+
+          .card-body {
+            color: var(--white-trans);
+            padding: .625rem;
+          }
+
+          .card-header {
+            display: block;
+            color: oklch(0% 0 0 / 0.9);
+            background-color: var(--white-trans);
+            border: 0;
+            border-bottom: 4px solid var(--accent-color);
+            padding: .625rem;
+          }
+
+          /* https://www.digitalocean.com/community/tutorials/css-collapsible */
+          input[type='checkbox'] {
+            display: none;
+          }
+
+          .lbl-toggle {
+            cursor: pointer;
+          }
+
+          .lbl-toggle::before { /* CSS Arrow */
+            content: ' ';
+            display: inline-block;
+
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid var(--white-trans);
+            vertical-align: middle;
+            margin-right: .7rem;
+            transform: translateY(-2px);
+          }
+
+          .toggle:checked + .lbl-toggle::before {
+            transform: rotate(90deg) translateX(-3px);
+          }
+
+          .collapsible-content {
+            max-height: 0px;
+            overflow: hidden;
+            padding: 0;
+          }
+
+          .toggle:checked + .lbl-toggle + .collapsible-content {
+            max-height: 100vh;
+          }
+        </style>
+    </head>
+    <body>
+        <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" preserveAspectRatio="xMidYMid meet" id="svg-bg">
+            <defs>
+              <filter id="terrain">
+                <feTurbulence type="fractalNoise" numOctaves="1" baseFrequency="0.02" stitchTiles="stitch"></feTurbulence>
+                <feColorMatrix type="matrix" values="
+                  0.33 0.33 0.33 0 0
+                  0.33 0.33 0.33 0 0
+                  0.33 0.33 0.33 0 0
+                  0    0    0    0 1"></feColorMatrix>
+                <feGaussianBlur stdDeviation="10"></feGaussianBlur>
+                <feComponentTransfer>
+                  <feFuncR type="discrete" tableValues="0.0 0.025 0.05 0.075 0.1 0.125 0.15 0.175 0.2 0.225 0.25 0.275 0.3 0.325 0.35 0.375 0.4 0.425 0.45 0.475 0.5 0.525 0.55 0.575 0.6 0.625 0.65 0.675 0.7 0.725 0.75 0.775 0.8 0.825 0.85 0.875 0.9 0.925 0.95 0.975 1.0"></feFuncR>
+                  <feFuncG type="discrete" tableValues="0.0 0.025 0.05 0.075 0.1 0.125 0.15 0.175 0.2 0.225 0.25 0.275 0.3 0.325 0.35 0.375 0.4 0.425 0.45 0.475 0.5 0.525 0.55 0.575 0.6 0.625 0.65 0.675 0.7 0.725 0.75 0.775 0.8 0.825 0.85 0.875 0.9 0.925 0.95 0.975 1.0"></feFuncG>
+                  <feFuncB type="discrete" tableValues="0.0 0.025 0.05 0.075 0.1 0.125 0.15 0.175 0.2 0.225 0.25 0.275 0.3 0.325 0.35 0.375 0.4 0.425 0.45 0.475 0.5 0.525 0.55 0.575 0.6 0.625 0.65 0.675 0.7 0.725 0.75 0.775 0.8 0.825 0.85 0.875 0.9 0.925 0.95 0.975 1.0"></feFuncB>
+                </feComponentTransfer>
+                <feConvolveMatrix divisor="1" preserveAlpha="true" order="3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1"></feConvolveMatrix>
+                <feColorMatrix type="matrix" values="
+                  0.3 0 0 0 0
+                  0.3 0 0 0 0
+                  0.3 0 0 0 0
+                  0   0 0 0 1"></feColorMatrix>
+                <feGaussianBlur stdDeviation="0.5"></feGaussianBlur>
+              </filter>
+            </defs>
+            <rect width="100%" height="100%" filter="url(#terrain)"></rect>
+        </svg>
+        <div id="container">
+            <div class="card">
+                <div class="card-header"> About Me</div>
+                <div class="card-body">
+                    Hello, my name is Carter Parks. This site is my space for fiddling around with
+                    web design and other topics. <br><br> This page contains information about me and
+                    projects I am working on, as well as work that I find interesting and would like
+                    others to know about.<br><br>
+                    <div class="wrap-collabsible">
+                        <input id="collapsible" class="toggle" type="checkbox">
+                        <label for="collapsible" class="lbl-toggle">Show/Hide</label>
+                        <div class="collapsible-content">
+                            <img src="profile.png" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> Career</div>
+                <div class="card-body"> I work as a software developer. Most of my experience has been in web development,
+                    but I have a strong interest in all areas of computing. Take a look at <a target="_blank" href="Carter-Parks-Resume.pdf">my resume</a> and see if I would be a good fit for
+                    the work you are doing.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> Internet Presence</div>
+                <div class="card-body"> You can email me at <a href="contact@carterparks.org">contact@carterparks.org</a>.
+                    I have a
+                    <a target="_blank" href="https://github.com/CarterParks">GitHub</a>
+                    and a
+                    <a target="_blank" href="https://www.linkedin.com/in/carter-parks-596604242">LinkedIn</a>.
+                    This list is comprehensive. If you see someone else on the web that shares my name, it isn't me!
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> Site Info</div>
+                <div class="card-body"> The source for this site is located <a target="_blank" href="https://github.com/CarterParks/carterparks.org">here</a>.
+                    The page is served by AWS S3 static hosting, although I hope to fully self-host it once
+                    I obtain the necessary equipment. 
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> Distrohopping</div>
+                <div class="card-body"> I am a OS enthusiast, and enjoy customization and control of my computer environment.
+                    I'm currently running <a target="_blank" href="https://www.gentoo.org/">Gentoo Linux</a>
+                    and using <a target="_blank" href="https://xmonad.org/">XMonad</a>,
+                    a dynamic tiling window manager written in Haskell.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> CLI FTW</div>
+                <div class="card-body"> I have a stong preference for the command-line interface, and perform the large
+                    marjority of my work there. I use zsh and <a target="_blank" href="https://ohmyz.sh/">omz</a>, a configuration framework with great completions, plugins, and themeing.
+                    My terminal of choice is <a target="_blank" href="https://st.suckless.org/">st</a>
+                    a simple terminal by the suckless.org project.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> $EDITOR</div>
+                <div class="card-body"> I typically use <a target="_blank" href="https://kakoune.org/">Kakoune</a>, a modal
+                    editor with a number of very useful features, such as multiple selections and excellent
+                    shell integration.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> Self Hosted Email</div>
+                <div class="card-body"> I use an installation of
+                    <a target="_blank" href="https://maddy.email/">Maddy Email</a>
+                    on an AWS EC2 instance to recieve email.
+                    It was a breeze to set up and I recommend it.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> Standard Ebooks</div>
+                <div class="card-body"> <a target="_blank" href="https://standardebooks.org/">The Standard Ebooks Project</a>
+                    makes high-quality public domain ebooks. I read them on my Kobo Clara HD, which allows
+                    sideloading of PDFs, EPUBs, etc.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> OKLCH</div>
+                <div class="card-body"> The <a target="_blank" href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl">
+                    OKLCH colorspace</a> allows for hue shifting without changes in luminance or chroma.
+                    The colors on this site all use OKLCH.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> Fonts</div>
+                <div class="card-body"> This site uses Pablo Caro's <a target="_blank" href="https://pcaro.es/hermit/">Hermit
+                    Font</a>, one of my favorite fonts, although I now use the popular <a target="_blank" href="https://github.com/tonsky/FiraCode">Fira Code</a> in my terminals, because
+                    I like the ligatures.
+                </div>
+            </div>
+        </div>
+        <script>
+          let cards = document.querySelectorAll(".card");
+          cards.forEach((x, i) => x.style.setProperty("--hue", `${(i / cards.length) * 360 }`));
+        </script>
+    </body>
+</html>
